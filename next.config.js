@@ -1,19 +1,16 @@
 const nextConfig = {
-    reactStrictMode: true,
-    swcMinify: true,
-    compiler: {
-        removeConsole: process.env.NODE_ENV !== 'development',
-    },
-    images: {
-        domains: [ "cdn.discordapp.com" ]
-    }
+  reactStrictMode: true,
+  swcMinify: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV !== 'development',
+  },
+  images: {
+    domains: [ "cdn.discordapp.com" ]
+  },
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
 };
 
-const withPWA = require("next-pwa")({
-    dest: 'public',
-    disable: process.env.NODE_ENV == "development",
-    register: true,
-    skipWaiting: true
-});
-
-module.exports = withPWA(nextConfig);
+module.exports = nextConfig;
